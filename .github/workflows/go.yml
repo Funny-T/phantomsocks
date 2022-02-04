@@ -41,7 +41,7 @@ jobs:
            go get golang.org/x/sys@v0.0.0-20191026070338-33540a1f6037
         
     - name: Build
-      run: go build -v ./...
+      run: go build -v -o build_assets/phantomsocks -trimpath -ldflags "-s -w -buildid=" ./
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.3.1
