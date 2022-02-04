@@ -44,11 +44,4 @@ jobs:
       
     - name: Build
       run: go build -v ./...
-
-    - name: Upload files to Artifacts
-      uses: actions/upload-artifact@v2
-      with:
-          name: phantomsocks
-          path: |
-            ./phantomsocks/*
   
