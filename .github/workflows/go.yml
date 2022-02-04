@@ -12,16 +12,12 @@ on:
       - "go.mod"
       - "go.sum"
       - ".github/workflows/*.yml"
-  pull_request:
-    types: [opened, synchronize, reopened]
-    paths:
-      - "**/*.go"
-      - "go.mod"
-      - "go.sum"
-      - ".github/workflows/*.yml"
 jobs:
+
   build:
+  
     strategy:
+    
      matrix:
       goos: [windows, linux]
       goarch: [amd64]
@@ -32,7 +28,7 @@ jobs:
       CGO_ENABLED: 0
     steps:
     - name: Checkout codebase
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
 
     - name: Set up Go
       uses: actions/setup-go@v2
